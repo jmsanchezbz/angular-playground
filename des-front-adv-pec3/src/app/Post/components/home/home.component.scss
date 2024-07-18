@@ -1,0 +1,44 @@
+/*.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}*/
+
+.card-container {
+  /*margin: 0 auto;*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  @media (min-width: 720px) {
+    flex-direction: row;
+  }
+}
+
+.container {
+  display: flex; /* Make the container a flexbox */
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .item {
+    flex: 0 1 calc(33.33% - 40px); /* Set flex properties for equal width distribution */
+  }
+}

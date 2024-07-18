@@ -1,0 +1,35 @@
+<div style="margin-left: auto; margin-right: auto">
+  <p id="loginFeedback"></p>
+</div>
+<div class="container-uoc" [@fadeInOut]>
+  <mat-card class="mat-elevation-z4">
+    <h1>Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="my-form">
+      <section>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" [formControl]="email" placeholder="a@b.com" />
+          <mat-error *ngIf="email.errors && (email.touched || email.dirty)">
+            <span *ngIf="email.errors.pattern && !email.errors.required">Please enter a valid email
+              address</span>
+            <span *ngIf="!email.errors.email && email.errors.required">Email is
+              <strong>required</strong></span>
+          </mat-error>
+        </mat-form-field>
+      </section>
+      <section>
+        <mat-form-field appearence="fill" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" [formControl]="password" required />
+          <mat-error *ngIf="password.errors && (password.touched || password.dirty)">
+            <span *ngIf="password.errors.required">Password is required</span>
+            <span *ngIf="password.errors.minlength">Password must be greater tha 8 characters</span>
+            <span *ngIf="password.errors.maxlength">Password can be max 16 characters long</span></mat-error>
+        </mat-form-field>
+      </section>
+      <section>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+      </section>
+    </form>
+  </mat-card>
+</div>

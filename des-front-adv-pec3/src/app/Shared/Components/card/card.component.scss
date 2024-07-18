@@ -1,0 +1,35 @@
+.my-card {
+  /*max-width: 100%;*/
+    flex: 1 0 30%;
+
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+}
+
+.badge {
+  color: black;
+  margin-right: 5px;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+mat-card-content {
+  padding: 20px;
+}
+
+mat-card-title {
+  margin-bottom: 10px;
+}
+
+mat-card-subtitle {
+  margin-bottom: 10px;
+}

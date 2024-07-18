@@ -1,0 +1,105 @@
+<div style="margin-left: auto; margin-right: auto">
+  <p id="registerFeedback"></p>
+</div>
+<div class="container-uoc">
+  <h1>Register</h1>
+  <form [formGroup]="registerForm" (ngSubmit)="register()" class="my-form">
+    <section>
+      <mat-form-field appearance=fill class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" [formControl]="name" placeholder="Enter name" />
+        <mat-error *ngIf="name.errors && isValidForm != null && !isValidForm">
+          <span *ngIf="name.errors.required">Name is required</span>
+          <span *ngIf="name.errors.minlength">
+            Name must be at least 5 characters long.
+          </span>
+          <span *ngIf="name.errors.maxlength">
+            Name can be max 25 characters long.
+          </span>
+        </mat-error>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Surname 1</mat-label>
+        <input matInput type="text" [formControl]="surname_1" placeholder="Enter surname 1" />
+        <mat-error *ngIf="surname_1.errors && isValidForm != null && !isValidForm">
+          <span *ngIf="surname_1.errors.required">Surname1 is required</span>
+          <span *ngIf="surname_1.errors.minlength">
+            Surname1 must be at least 5 characters long.
+          </span>
+          <span *ngIf="surname_1.errors.maxlength">
+            Surname1 can be max 25 characters long.
+          </span>
+        </mat-error>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Surname 2</mat-label>
+        <input matInput type="text" [formControl]="surname_2" placeholder="Enter surname 2" />
+        <mat-error *ngIf="surname_2.errors && isValidForm != null && !isValidForm">
+          <span *ngIf="surname_2.errors.required">Surname2 is required</span>
+          <span *ngIf="surname_2.errors.minlength">
+            Surname2 must be at least 5 characters long.
+          </span>
+          <span *ngIf="surname_2.errors.maxlength">
+            Surname2 can be max 25 characters long.
+          </span>
+        </mat-error>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Alias</mat-label>
+        <input matInput type="text" [formControl]="alias" placeholder="Enter alias" />
+        <mat-error *ngIf="alias.errors && isValidForm != null && !isValidForm">
+          <span *ngIf="alias.errors.required">Alias is required</span>
+          <span *ngIf="alias.errors.minlength">
+            Alias must be at least 5 characters long.
+          </span>
+          <span *ngIf="alias.errors.maxlength">
+            Alias can be max 25 characters long.
+          </span>
+        </mat-error>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Birthdate</mat-label>
+        <input matInput [formControl]="birth_date" [matDatepicker]="picker"
+          placeholder="Enter birth date" />
+        <!--mat-hint>MM/DD/YYYY</!--mat-hint-->
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="birth_date.errors && isValidForm != null && !isValidForm">
+          <span *ngIf="birth_date.errors.required">Birth date is required</span>
+        </mat-error>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [formControl]="email" placeholder="Enter email like a@b.com" />
+        <mat-error *ngIf="email.errors && isValidForm != null && !isValidForm">
+          <span *ngIf="email.errors.required">Email is required</span>
+          <span *ngIf="email.errors.pattern">Email not a valid format.</span>
+        </mat-error>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [formControl]="password" placeholder="Enter password" />
+        <mat-error *ngIf="password.errors && isValidForm != null && !isValidForm">
+          <span *ngIf="password.errors.required">Password is required</span>
+          <span *ngIf="password.errors.minlength">
+            Password must be at least 8 characters long.
+          </span>
+        </mat-error>
+      </mat-form-field>
+    </section>
+
+    <button mat-raised-button color="primary" type="submit">Register</button>
+  </form>
+</div>

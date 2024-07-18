@@ -1,0 +1,46 @@
+<div style="margin-left: auto; margin-right: auto">
+  <p id="categoryFeedback"></p>
+</div>
+<div class="container-uoc">
+  <h1>Category form</h1>
+  <form *ngIf="categoryForm" [formGroup]="categoryForm" (ngSubmit)="saveCategory()" class="my-form">
+    <section>
+      <mat-form-field appearance=fill class="full-width">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" [formControl]="title" placeholder="Enter title" />
+        <mat-error *ngIf="title.errors && isValidForm != null && !isValidForm">
+          <span *ngIf="title.errors.required">Title is required</span>
+          <span *ngIf="title.errors.maxlength">
+            Title can be max 55 characters long.
+          </span>
+        </mat-error>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field appearance=fill class="full-width">
+        <mat-label>Description</mat-label>
+        <input matInput type="text" [formControl]="description" placeholder="Enter description" />
+        <mat-error *ngIf="description.errors && isValidForm != null && !isValidForm">
+          <span *ngIf="description.errors.required">Description is required</span>
+          <span *ngIf="description.errors.maxlength">
+            Description can be max 255 characters long.
+          </span>
+        </mat-error>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field appearance=fill class="full-width">
+        <mat-label>CSS Color</mat-label>
+        <input matInput type="text" [formControl]="css_color" placeholder="Enter description" />
+        <mat-error *ngIf="css_color.errors && isValidForm != null && !isValidForm">
+          <span *ngIf="css_color.errors.required">Css color is required</span>
+          <span *ngIf="css_color.errors.maxlength">
+            Css color can be max 7 characters long.
+          </span>
+        </mat-error>
+      </mat-form-field>
+    </section>
+
+    <button mat-raised-button color="primary" type="submit">SAVE</button>
+  </form>
+</div>

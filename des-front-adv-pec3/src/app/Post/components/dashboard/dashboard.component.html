@@ -1,0 +1,11 @@
+<div class="container-uoc">
+  <div *ngIf="posts">
+    <p>Num likes: {{ numLikes }}</p>
+    <p>Num dislikes: {{ numDislikes }}</p>
+  </div>
+</div>
+
+<div class="chart-container">
+  <canvasjs-chart [options]="chartOptions1"></canvasjs-chart>
+  <canvasjs-chart [options]="chartOptions2"></canvasjs-chart>
+</div>

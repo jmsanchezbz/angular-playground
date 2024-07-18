@@ -1,0 +1,59 @@
+<div style="margin-left: auto; margin-right: auto">
+  <p id="postFeedback"></p>
+</div>
+<div class="container-uoc">
+  <h1>Post form</h1>
+  <form *ngIf="postForm" [formGroup]="postForm" (ngSubmit)="savePost()" class="my-form">
+    <section>
+      <mat-form-field appearance=fill class="full-width">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" [formControl]="title" placeholder="Enter title" />
+        <mat-error *ngIf="title.errors && isValidForm != null && !isValidForm">
+          <span *ngIf="title.errors.required">Title is required</span>
+
+          <span *ngIf="title.errors.maxlength">
+            Title can be max 55 characters long.
+          </span>
+        </mat-error>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field appearance=fill class="full-width">
+        <mat-label>Description</mat-label>
+        <input matInput type="text" [formControl]="description" placeholder="Enter description" />
+        <mat-error *ngIf="description.errors && isValidForm != null && !isValidForm">
+          <span *ngIf="description.errors.required">Description is required</span>
+          <span *ngIf="description.errors.maxlength">
+            Description can be max 255 characters long.
+          </span>
+        </mat-error>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Publication date</mat-label>
+        <input matInput [formControl]="publication_date" [matDatepicker]="picker" placeholder="Enter birth date" />
+        <!--mat-hint>MM/DD/YYYY</!--mat-hint-->
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="publication_date.errors && isValidForm != null && !isValidForm">
+          <span *ngIf="publication_date.errors.required">
+            Publication date is required
+          </span>
+        </mat-error>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field class="full-width">
+        <mat-label>Choose categories</mat-label>
+        <mat-select [formControl]="categories" multiple>
+          <mat-option *ngFor="let category of categoriesList" [value]="category.categoryId">
+            {{ category.title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </section>
+
+    <button mat-raised-button color="primary" type="submit">SAVE</button>
+  </form>
+</div>

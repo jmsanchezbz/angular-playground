@@ -1,0 +1,17 @@
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.menu-hor {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+  }
+}
+
+.white {
+  color: white;
+}

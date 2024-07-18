@@ -1,0 +1,19 @@
+<p>header works!</p>
+
+<!-- NO AUTH REQUIRED -->
+<div *ngIf="showNoAuthSection">
+  <button id="btnDashboard" (click)="dashboard()">Dashboard</button>
+  <button id="btnHome" (click)="home()">Home</button>
+  <button id="btnLogin" (click)="login()">Login</button>
+  <button id="btnRegister" (click)="register()">Register</button>
+</div>
+
+<!-- AUTH REQUIRED -->
+<div *ngIf="showAuthSection">
+  <button id="btnDashboard" (click)="dashboard()">Dashboard</button>
+  <button id="btnHome" (click)="home()">Home</button>
+  <button id="btnPosts" (click)="adminPosts()">Admin posts</button>
+  <button id="btnCategories" (click)="adminCategories()">Admin categories</button>
+  <button id="btnProfile" (click)="profile()">Profile</button>
+  <button id="btnLogout" (click)="logout()">Logout</button>
+</div>

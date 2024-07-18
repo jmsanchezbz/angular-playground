@@ -1,0 +1,28 @@
+.container {
+  width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @media (min-width: 1024px) {
+    width: 800px;
+  }
+
+  @media (min-width: 1600px) {
+    width: 1200px;
+  }
+}
+
+.my-button {
+  color: white;
+  background-color: #3f51b5;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+.info {
+    padding: 20px;
+}

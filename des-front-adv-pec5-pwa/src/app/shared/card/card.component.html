@@ -1,0 +1,13 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Unsplash - <a [href]="item.user_link">{{item.username}}</a></mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="item.url" [alt]="item.alt_description" height="300px">
+    <mat-card-content>
+        <p> {{item.alt_description}} </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="detail(item.id)">Detail</button>
+    </mat-card-actions>
+</mat-card>

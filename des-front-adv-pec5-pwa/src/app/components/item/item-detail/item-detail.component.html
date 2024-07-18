@@ -1,0 +1,41 @@
+<div class="container">
+    <div style="text-align:right">
+        <button mat-icon-button class="my-button" aria-label="Go back home" (click)="goHome()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+    </div>
+    <div>
+        <h1>Unsplash <ng-container *ngIf="item.username">- <a
+                    [href]="item.user_link">{{item.username}}</a></ng-container></h1>
+        <img class="responsive" [src]="item.url" [alt]="item.alt_description" height="300px">
+        <mat-accordion>
+            <mat-expansion-panel (opened)="detailsVisible = true" (closed)="detailsVisible = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <h3>More info</h3>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <p>{{item.alt_description}}</p>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="info">
+                    <h3> {{item.alt_description}} </h3>
+                    <div>
+                        <ng-container *ngIf="item.username">
+                            <p><strong>Username: </strong>{{item.username}}</p>
+                            <p>Take a look of {{item.username}} <a [href]="item.user_link" target="_blank">portfolio</a>
+                            </p>
+                        </ng-container>
+                        <p><strong>Updated at: </strong>{{item.updated_at|formatDate:2}}</p>
+                        <p><strong>Likes: </strong>{{item.likes}}</p>
+                    </div>
+                    <!--
+                    <button mat-flat-button color="primary" *ngIf="!detailsVisible" (click)="showDetails()">Show
+                        details</button>
+                    <button mat-flat-button color="primary" *ngIf="detailsVisible" (click)="hideDetails()">Hide
+                        details</button>-->
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>

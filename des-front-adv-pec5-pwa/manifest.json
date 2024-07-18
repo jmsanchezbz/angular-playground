@@ -1,0 +1,22 @@
+{
+    "short_name": "DesFrontAdvPec5",
+    "name": "Desarrollo Front End Avanzado PEC5",
+    "icons": [
+        {
+            "src": "laucher48x48.png",
+            "type": "image/png",
+            "size": "48x48"
+        },
+        {
+            "src": "laucher96x96.png",
+            "type": "image/png",
+            "size": "96x96"
+        },
+        {
+            "src": "laucher192x192.png",
+            "type": "image/png",
+            "size": "192x192"
+        }
+    ],
+    "start_url": "index.html?launcher=true"
+}

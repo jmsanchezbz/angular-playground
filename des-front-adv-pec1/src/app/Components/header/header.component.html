@@ -1,0 +1,21 @@
+<p>header works!</p>
+
+<app-translation/>
+
+<!-- NO AUTH REQUIRED -->
+<div *ngIf="showNoAuthSection">
+  <button (click)="home()">{{ 'home' | translate }}</button>
+  <button (click)="dashboard()">{{ 'dashboard' | translate }}</button>
+  <button (click)="login()">{{ 'login' | translate }}</button>
+  <button (click)="register()">{{ 'register' | translate }}</button>
+</div>
+
+<!-- AUTH REQUIRED -->
+<div *ngIf="showAuthSection">
+  <button (click)="home()">{{ 'home' | translate }}</button>
+  <button (click)="dashboard()">{{ 'dashboard' | translate }}</button>
+  <button (click)="adminPosts()">{{ 'postsAdmin' | translate }}</button>
+  <button (click)="adminCategories()">{{ 'categoriesAdmin' | translate }}</button>
+  <button (click)="profile()">{{ 'profile' | translate }}</button>
+  <button (click)="logout()">{{ 'logout' | translate }}</button>
+</div>

@@ -1,0 +1,26 @@
+<h2>{{ 'categoriesList' | translate }}</h2>
+<button (click)="createCategory()">ADD</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>{{ 'id' | translate | uppercase}}</th>
+      <th>{{ 'title' | translate | uppercase}}</th>
+      <th>{{ 'description' | translate | uppercase}}</th>
+      <th>CSS {{ 'color' | translate | uppercase}}</th>
+      <th>{{ 'actions' | translate | uppercase}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categories">
+      <td>{{ category.categoryId }}</td>
+      <td>{{ category.title }}</td>
+      <td>{{ category.description }}</td>
+      <td>{{ category.css_color }}</td>
+      <td>
+        <button (click)="updateCategory(category.categoryId)">{{ 'update' | translate | uppercase}}</button>
+        <button (click)="deleteCategory(category.categoryId)">{{ 'delete' | translate | uppercase}}</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

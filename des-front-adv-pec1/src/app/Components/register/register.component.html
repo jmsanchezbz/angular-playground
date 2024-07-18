@@ -1,0 +1,40 @@
+<div style="margin-left: auto; margin-right: auto">
+  <p id="registerFeedback">   
+  </p>
+</div>
+<div>
+  <h1>{{ 'register' | translate }}</h1>
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div>
+      <label for="name">{{ 'name' | translate }}:</label>
+      <input id="name" type="text" [formControl]="name" />
+    </div>
+    <div>
+      <label for="surname1">{{ 'surname' | translate }}:</label>
+      <input id="surname1" type="text" [formControl]="surname_1" />
+    </div>
+    <div>
+      <label for="name">{{ 'surname' | translate }}2:</label>
+      <input id="surname2" type="text" [formControl]="surname_2" />
+    </div>
+    <div>
+      <label for="name">{{ 'alias' | translate }}:</label>
+      <input id="name" type="text" [formControl]="alias" />
+    </div>
+    <div>
+      <label for="dob">{{ 'birthdate' | translate }}:</label>
+      <input id="dob" type="date" [formControl]="birth_date" />
+    </div>
+    <div>
+      <label for="email">{{ 'email' | translate }}:</label>
+      <input id="email" type="email" [formControl]="email" />
+    </div>
+    <div>
+      <label for="password">{{ 'password' | translate }}:</label>
+      <input id="password" type="password" [formControl]="password" />
+    </div>
+    <div>
+      <input id="register" type="submit" value="{{ 'register' | translate }}" />
+    </div>
+  </form>
+</div>

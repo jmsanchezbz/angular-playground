@@ -1,0 +1,18 @@
+<div style="margin-left: auto; margin-right: auto">
+  <p id="loginFeedback"></p>
+</div>
+<div>
+  <h1>{{ 'login' | translate }}</h1>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div>
+      <label for="email">{{ 'email' | translate }}:</label>
+      <input type="text" [formControl]="email" />
+    </div>
+    <div>
+      <label for="password">{{ 'password' | translate }}:</label>
+      <input type="password" [formControl]="password" />
+    </div>
+    <input type="submit" value="{{ 'login' | translate }}" />
+  </form>
+</div>

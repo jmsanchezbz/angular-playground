@@ -1,0 +1,28 @@
+<h2>{{ 'postList' | translate }}</h2>
+
+<button (click)="createPost()">{{ 'add' | translate | uppercase }}</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>{{ 'id' | translate | uppercase }}</th>
+      <th>{{ 'title' | translate | uppercase }}</th>
+      <th>{{ 'description' | translate | uppercase }}</th>
+      <th>{{ 'likes' | translate | uppercase }}</th>
+      <th>{{ 'dislikes' | translate | uppercase }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts">
+      <td>{{ post.postId }}</td>
+      <td>{{ post.title }}</td>
+      <td>{{ post.description }}</td>
+      <td>{{ post.num_likes }}</td>
+      <td>{{ post.num_dislikes }}</td>
+      <td>
+        <button (click)="updatePost(post.postId)">{{ 'update' | translate | uppercase }}</button>
+        <button (click)="deletePost(post.postId)">{{ 'delete' | translate | uppercase }}</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

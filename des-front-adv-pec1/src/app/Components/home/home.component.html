@@ -1,0 +1,39 @@
+<h2>{{ 'home' | translate }}</h2>
+
+<div style="border: 1px solid lightgray; padding: 10px;background-color: lightgrey;">
+    <h3>{{ 'filterPosts' | translate }}</h3>
+    <form [formGroup]="filterForm" (ngSubmit)="filter()">
+        <div>{{ 'search' | translate }}: <input type="text" [formControl]="filterText" placeholder="{{ 'searchByTitleDescAlias' | translate }}"/></div>
+        <div>{{ 'date' | translate }}: <input type="date" [formControl]="filterDate" placeholder="{{ 'filterByDate' | translate }}"/></div>
+        <button (click)="clear()">{{ 'clear' | translate }}</button>
+        <button type="submit">{{ 'search' | translate }}</button>
+    </form>
+</div>
+
+<div>
+    <div *ngFor="let post of filteredPosts" style="border: 1px solid lightgrey;margin:10px;padding:10px">
+        <ul *ngFor="let c of post.categories" style="display:inline-block;list-style:none">
+            <li [style.background-color]="c.css_color" style="padding:3px">
+                {{c.title}}
+            </li>
+        </ul>
+        <div>{{ 'title' | translate }}: {{post.title}}</div>
+        <div>{{ 'description' | translate }}: {{post.description}}</div>
+        <div>{{ 'likes' | translate }}: {{post.num_likes}}</div>
+        <div>{{ 'dislikes' | translate }}: {{post.num_dislikes}}</div>
+        <div>{{ 'publicationDate' | translate }}: {{post.publication_date | formatDate:3}}</div>
+        <div>{{ 'publishedBy' | translate }}: {{post.userAlias}}</div>
+        <div *ngIf="showButtons">
+            <button (click)="like(post.postId)">{{ 'like' | translate }}</button>
+            <button (click)="dislike(post.postId)">{{ 'dislike' | translate }}</button>
+        </div>
+    </div>
+    <!--
+        <div ngFor="let c of post.categories">
+            {{c.title}}
+        </div>
+        <div>{{post.title}}</div>
+        <button (click)="like(post.postId)">Like</button>
+        <button (click)="dislike(post.postId)">Dislike</button>
+    </div>-->
+</div>

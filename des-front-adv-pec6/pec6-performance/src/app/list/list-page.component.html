@@ -1,0 +1,8 @@
+<div class="container">
+    <h1>List</h1>
+    <cdk-virtual-scroll-viewport cla itemSize="50" class="vs-viewport">
+        <div *cdkVirtualFor="let item of students; let index = index; let count = count; let even = even" class="one-item" [class.background]="even">
+            {{index}}. {{item.name}} {{item.surname}} - {{item.gender}} {{item.mark}}
+        </div>
+    </cdk-virtual-scroll-viewport>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+
+    <div class="div-chart" style="background-color: lightcyan;">
+        @defer(on viewport){
+        <app-resume-data></app-resume-data>
+        } @placeholder {
+        <p class="block mt-5">Loading ...</p>
+        }
+    </div>
+
+    <div class="div-chart" style="background-color: lightcoral;">
+        @defer(on viewport){
+        <app-gender></app-gender>
+        } @placeholder {
+        <p class="block mt-5">Loading ...</p>
+        }
+    </div>
+
+    <div class="div-chart" style="background-color: lightblue;">
+        @defer(on viewport){
+        <app-general-results></app-general-results>
+        } @placeholder {
+        <p class="block mt-5">Loading ...</p>
+        }
+    </div>
+
+</div>

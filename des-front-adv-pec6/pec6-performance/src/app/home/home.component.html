@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Home</h1>
+    <div>
+        <ul>
+            @for(item of students; track item.id) {
+            <li>
+                <p>
+                    {{item.name}} {{item.surname}} <span style="font-weight: bold;">Gender:</span>
+                    @if(item.gender && item.gender =='M'){
+                        <span>Male </span>
+                    }@else{
+                        <span>Female </span>
+                    }
+                    @if(item.mark && item.mark < 5){
+                        <span style="color:lightcoral">Failed ({{item.mark}}) </span>
+                    }@else{
+                        <span style="color:lightseagreen">Passed ({{item.mark}}) </span>
+                    }
+                    <span style="font-weight: bold;">Absences:</span> {{item.absences}}
+                </p>
+            </li>
+            }@empty{
+            <li>
+                <p>There is no items to show</p>
+            </li>
+            }
+        </ul>
+    </div>
+</div>
